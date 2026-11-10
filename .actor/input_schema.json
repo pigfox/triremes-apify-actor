@@ -1,0 +1,110 @@
+{
+  "title": "Triremes website-gap leads",
+  "type": "object",
+  "schemaVersion": 1,
+  "properties": {
+    "apiKey": {
+      "title": "Triremes API key",
+      "type": "string",
+      "description": "Your own key from triremes.com/account/api. It is sent only to triremes.com, as Authorization: Bearer.",
+      "editor": "textfield",
+      "isSecret": true
+    },
+    "category": {
+      "title": "Business type",
+      "type": "string",
+      "description": "As Triremes names it, for example Dentist, Plumber or Roofing Contractor. Empty: every type.",
+      "editor": "textfield",
+      "prefill": "Dentist"
+    },
+    "country": {
+      "title": "Country",
+      "type": "string",
+      "description": "A two-letter code, for example US, GB or DE. Empty: every country.",
+      "editor": "textfield",
+      "prefill": "US"
+    },
+    "region": {
+      "title": "State or region",
+      "type": "string",
+      "description": "For example NV or CA. Empty: the whole country.",
+      "editor": "textfield"
+    },
+    "city": {
+      "title": "City",
+      "type": "string",
+      "description": "Empty: every city.",
+      "editor": "textfield"
+    },
+    "q": {
+      "title": "Keyword",
+      "type": "string",
+      "description": "Words found in the business type, city, region, country or the name of a gap. Every word must match.",
+      "editor": "textfield"
+    },
+    "gap": {
+      "title": "Fails this check",
+      "type": "string",
+      "description": "Only websites that fail this SEO check. Empty: any.",
+      "editor": "select",
+      "enum": [
+        "https",
+        "redirects",
+        "mixed_content",
+        "ttfb",
+        "title_missing",
+        "title_long",
+        "title_short",
+        "meta_description",
+        "h1",
+        "canonical",
+        "viewport",
+        "open_graph",
+        "noindex",
+        "robots_blocks_all",
+        "sitemap",
+        "structured_data",
+        "structured_data_invalid"
+      ],
+      "enumTitles": [
+        "Homepage not on HTTPS",
+        "More than 2 redirects to the homepage",
+        "HTTP resources on an HTTPS homepage",
+        "First byte after more than 1800 ms",
+        "No homepage title",
+        "Homepage title over 60 characters",
+        "Homepage title under 30 characters",
+        "No meta description",
+        "No h1 heading",
+        "No canonical link",
+        "No viewport tag",
+        "No Open Graph title or image",
+        "Homepage marked noindex",
+        "robots.txt blocks all crawlers",
+        "No sitemap",
+        "No structured data (JSON-LD)",
+        "Structured data that is not valid JSON"
+      ]
+    },
+    "minimumScore": {
+      "title": "Minimum SEO score (%)",
+      "type": "integer",
+      "description": "Only websites at or above it; 0 keeps every website, those still being measured too. SEO score: the share of Triremes' checks of what search engines can read on this homepage that it fails, weighted by how serious each check is. 0% means no gaps; higher is worse.",
+      "minimum": 0,
+      "maximum": 100,
+      "default": 0
+    },
+    "limit": {
+      "title": "Most websites",
+      "type": "integer",
+      "description": "The run stops once it has this many.",
+      "minimum": 1,
+      "maximum": 10000,
+      "default": 100
+    }
+  },
+  "required": [
+    "apiKey",
+    "limit"
+  ]
+}

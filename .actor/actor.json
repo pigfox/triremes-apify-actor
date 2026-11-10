@@ -1,0 +1,43 @@
+{
+  "actorSpecification": 1,
+  "name": "triremes-website-gap-leads",
+  "title": "Triremes website-gap leads",
+  "description": "Business websites with measured SEO and AEO gaps, by business type and place, from Triremes. Each row: the kind of business, where it is, its SEO and AEO scores, the checks it fails, the day it was measured and its lead page. Needs your own Triremes API key.",
+  "version": "1.0",
+  "buildTag": "latest",
+  "dockerfile": "../Dockerfile",
+  "input": "./input_schema.json",
+  "storages": {
+    "dataset": {
+      "actorSpecification": 1,
+      "title": "Websites with SEO and AEO gaps",
+      "views": {
+        "overview": {
+          "title": "Overview",
+          "transformation": {
+            "fields": ["title", "category", "city", "region", "country", "seo_score", "aeo_score", "seo_failed_checks", "aeo_failed_checks", "measured_at", "price", "sold_times", "hot", "lead_url"]
+          },
+          "display": {
+            "component": "table",
+            "properties": {
+              "title": {"label": "Business", "format": "text"},
+              "category": {"label": "Type", "format": "text"},
+              "city": {"label": "City", "format": "text"},
+              "region": {"label": "Region", "format": "text"},
+              "country": {"label": "Country", "format": "text"},
+              "seo_score": {"label": "SEO score %", "format": "number"},
+              "aeo_score": {"label": "AEO score %", "format": "number"},
+              "seo_failed_checks": {"label": "SEO checks failed", "format": "array"},
+              "aeo_failed_checks": {"label": "AEO checks failed", "format": "array"},
+              "measured_at": {"label": "Measured", "format": "date"},
+              "price": {"label": "Lead price", "format": "text"},
+              "sold_times": {"label": "Sold times", "format": "number"},
+              "hot": {"label": "Hot lead", "format": "boolean"},
+              "lead_url": {"label": "Lead", "format": "link"}
+            }
+          }
+        }
+      }
+    }
+  }
+}

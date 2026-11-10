@@ -1,0 +1,40 @@
+[
+  {
+    "id": "a1",
+    "title": "Dentist in Reno, NV, United States",
+    "category": "Dentist",
+    "city": "Reno",
+    "region": "NV",
+    "country": "US",
+    "seo_score": 64,
+    "seo_failed_checks": ["Meta description"],
+    "aeo_score": 40,
+    "aeo_failed_checks": ["llms.txt"],
+    "being_measured": false,
+    "measured_at": "2026-11-02T09:00:00Z",
+    "price": "$99",
+    "sold_times": 2,
+    "hot": false,
+    "lead_url": "https://triremes.example/website-gaps/site/a1",
+    "business_and_website": "shown once bought, at lead_url"
+  },
+  {
+    "id": "a4",
+    "title": "Dentist in Sparks, NV, United States",
+    "category": "",
+    "city": "",
+    "region": "",
+    "country": "",
+    "seo_score": 88,
+    "seo_failed_checks": [],
+    "aeo_score": null,
+    "aeo_failed_checks": [],
+    "being_measured": false,
+    "measured_at": "",
+    "price": "",
+    "sold_times": 0,
+    "hot": true,
+    "lead_url": "",
+    "business_and_website": "shown once bought, at lead_url"
+  }
+]
