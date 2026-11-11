@@ -1,0 +1,19 @@
+{
+  "actorOutputSchemaVersion": 1,
+  "title": "Websites with SEO and AEO gaps",
+  "description": "The run's default dataset: one row per business website on sale on Triremes, with its kind and place, SEO and AEO scores, failed checks, the day measured, price, times sold and lead page.",
+  "properties": {
+    "overview": {
+      "type": "string",
+      "title": "Websites (overview)",
+      "description": "Each website's title, type, city, region, country, SEO score, AEO score, failed SEO and AEO checks, measured date, lead price, times sold, hot lead flag and lead page.",
+      "template": "{{links.apiDefaultDatasetUrl}}/items?view=overview"
+    },
+    "results": {
+      "type": "string",
+      "title": "All fields",
+      "description": "Every field of each row, as JSON.",
+      "template": "{{links.apiDefaultDatasetUrl}}/items"
+    }
+  }
+}
